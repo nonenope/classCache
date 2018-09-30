@@ -6,16 +6,14 @@
     </head>
     <body>
         <?php
-        require_once 'class.Cache.php';
-        $cache = new Cache;
-        
         $config = array(
             'cachePath' => 'cache/',
             'cacheTld'  => 'cache',
             'newLine'   => '<br>'
         );
-         
-        $cache->setConf($config);
+        
+        require_once 'class.Cache.php';
+        $cache = new Cache($config);
         ?>
     </body>
 </html>
