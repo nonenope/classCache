@@ -8,6 +8,12 @@
         <?php
         require_once 'class.Cache.php';
         $cache = new Cache;
+        
+        $config = array(
+            'cachePath' => 'cache/',
+            'cacheTld'  => 'cache'
+        );
+        $cache->setConf($config);
         ?>
     </body>
 </html>

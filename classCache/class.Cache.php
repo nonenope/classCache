@@ -2,23 +2,19 @@
 
 class Cache 
 {
+    protected $cachePath;
+    protected $cacheTld;
+    
     function __construct() 
     {
-        echo __DIR__;
+        //echo __DIR__;
     }
     
-    public function set($params)
+    public function setConf($params)
     {
-        
-    }
-    
-    public function add($params)
-    {
-        
-    }
-    
-    protected function cacheType()
-    {
-        
+        foreach ($params as $key => $val)
+        {
+            $this->$key = $val;
+        }
     }
 }
