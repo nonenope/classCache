@@ -6,16 +6,7 @@ class Cache
     protected $cacheTld;
     protected $newLine;
     
-    function __construct() 
-    {
-        //echo __DIR__;
-    }
-    
-    /*  Cache Setup
-     * 
-     *  @var $params sting/array 
-     */
-    public function setConf($params)
+    function __construct($params) 
     {
         $this->checkConfParams($params);
         
