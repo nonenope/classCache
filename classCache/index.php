@@ -14,7 +14,7 @@
             'cacheTld'  => 'cache',
             'newLine'   => '<br>'
         );
-        
+         
         $cache->setConf($config);
         ?>
     </body>
