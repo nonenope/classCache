@@ -10,9 +10,11 @@
         $cache = new Cache;
         
         $config = array(
-            'cachePath' => 'cache/',
-            'cacheTld'  => 'cache'
+            'cachePath' => '',
+            'cacheTld'  => 'cache',
+            'newLine'   => ''
         );
+        
         $cache->setConf($config);
         ?>
     </body>
