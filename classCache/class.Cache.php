@@ -5,8 +5,9 @@ class Cache
     protected $cachePath;
     protected $cacheTld;
     protected $newLine;
+    protected $cacheName;
     
-    function __construct($params) 
+    function __construct($params = null) 
     {
         $this->checkConfParams($params);
         
@@ -18,6 +19,28 @@ class Cache
         $this->checkConf();
     }
     
+    
+    public function set($cacheName, $value, $exp = -1)
+    {
+        $this->setCacheName($cacheName);
+        echo $this->cacheName;
+    }
+    
+    
+    
+    protected function setCacheName($cacheName)
+    {
+        if(empty($cacheName))
+        {
+            $this->error (false, 'Cache name not specify');
+        }
+        if(!is_string($cacheName))
+        {
+            $this->error(false, 'Cache name must be a string');
+        }
+        $this->cacheName = sha1($cacheName);
+    }
+    
     /*
      * Check params before
      */
@@ -26,12 +49,10 @@ class Cache
         if(!is_array($params))
         {
             $this->error(false, '$config is not array please check it');
-            die;
         }
         if(empty($params))
         {
             $this->error(false, '$config is empty array');
-            die;
         }
     }
     
@@ -53,7 +74,6 @@ class Cache
         if(empty($this->cachePath))
         {
             $this->error(false, 'please set cachePath in $config');
-            die;
         }
     }
     
@@ -65,7 +85,6 @@ class Cache
         if(empty($this->cacheTld))
         {
             $this->error(false, 'please set cacheTls in $config');
-            die;
         }
     }
     
@@ -77,7 +96,6 @@ class Cache
         if(empty($this->newLine))
         {
             $this->error(false, 'please set newLine in $config');
-            die;
         }
     }
     
