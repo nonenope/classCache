@@ -11,7 +11,6 @@ class Cache
         //echo __DIR__;
     }
     
-        
     /*  Cache Setup
      * 
      *  @var $params sting/array 
