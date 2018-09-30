@@ -1,3 +1,3 @@
 # classCache
 
-siple php class Cache
+simple php class Cache
